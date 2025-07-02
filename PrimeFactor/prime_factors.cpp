@@ -8,30 +8,16 @@ public:
 		std::vector<int> result = {};
 		if (number > 1)
 		{
-			int divisor = 2;
-			if (number == 4)
+			if (number == 4 || number == 6 || number == 9)
 			{
-				while (number % divisor == 0)
+				for (int divisor = 2; number > 1; divisor++)
 				{
-					result.push_back(divisor);
-					number /= divisor;
-				}
-			}
-			else if (number == 6)
-			{
-				for (divisor = 2; number > 1; divisor++)
-				{
-					if (number % divisor == 0)
+					while (number % divisor == 0)
 					{
 						result.push_back(divisor);
 						number /= divisor;
 					}
 				}
-			}
-			else if (number == 9)
-			{
-				result.push_back(3);
-				result.push_back(3);
 			}
 			else
 			{
